@@ -17,7 +17,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -64,10 +63,10 @@
     }
 
     .hero {
-      padding: 72px 0 40px;
+      width: 100%;
+      padding: 72px 16px 40px;
       display: grid;
-      grid-template-columns: 1.35fr 1fr;
-      gap: 28px;
+      grid-template-columns: 1fr;
       align-items: stretch;
     }
 
@@ -129,20 +128,6 @@
       border-color: transparent;
     }
 
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .mini {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      background: rgba(255,255,255,0.03);
-    }
-
     section {
       padding: 26px 0;
     }
@@ -194,17 +179,6 @@
       margin: 10px 0 0;
     }
 
-    .placeholder {
-      min-height: 220px;
-      border-radius: 16px;
-      border: 1px dashed rgba(255,255,255,0.22);
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-      background: rgba(255,255,255,0.03);
-      text-align: center;
-      padding: 16px;
-    }
     .project-media {
       border: 1px dashed rgba(255,255,255,0.22);
       border-radius: 16px;
@@ -212,17 +186,10 @@
       padding: 14px;
     }
 
-    .media-note {
-      color: var(--muted);
-      margin: 0 0 10px;
-      font-size: 0.9rem;
-    }
-
     .media-gallery {
       display: grid;
       grid-template-columns: 1fr;
       gap: 10px;
-      margin-bottom: 10px;
     }
 
     .media-gallery img,
@@ -235,16 +202,9 @@
       object-fit: cover;
     }
 
-    .upload-label {
-      display: inline-block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .media-upload {
-      width: 100%;
-      color: var(--muted);
+    .media-file-link {
+      margin: 2px 0 0;
+      font-size: 0.88rem;
     }
 
     .two-col {
@@ -253,14 +213,7 @@
       gap: 18px;
     }
 
-    footer {
-      padding: 36px 0 52px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     @media (max-width: 860px) {
-      .hero,
       .project-grid,
       .two-col {
         grid-template-columns: 1fr;
@@ -281,12 +234,12 @@
     </div>
   </nav>
 
-  <header class="wrap hero">
+  <header class="hero">
     <div class="hero-card">
-      <div class="eyebrow">Electrical Engineering • Stanford</div>
+      <div class="eyebrow">Electrical Engineering � Stanford</div>
       <h1>Building embedded, hardware, and energy-focused systems.</h1>
       <p class="sub">
-        I’m Hudson, an Electrical Engineering student at Stanford interested in embedded systems,
+        I'm Hudson, an Electrical Engineering student at Stanford interested in embedded systems,
         hardware design, power/energy systems, and practical engineering build-debug-test work.
       </p>
       <div class="cta-row">
@@ -300,7 +253,6 @@
   <main class="wrap">
     <section id="projects">
       <h2>Selected Projects</h2>
-      <p class="sub">Add files to <code>images/</code> and/or use each project uploader for quick previews.</p>
       <div class="projects">
 
         <article class="project">
@@ -327,16 +279,13 @@
               <p><strong>Engineering takeaway:</strong> Good embedded hardware depends on tight iteration between mechanism, control logic, and power behavior.</p>
             </div>
             <div class="project-media" data-project="stepper">
-              <p class="media-note">Showcase media for this project.</p>
               <div class="media-gallery">
-                <img src="images/useless-box.png" alt="Stepper-Motor Useless Box project image" loading="lazy" onerror="this.style.display='none';" />
-                <video controls preload="metadata" onerror="this.style.display='none';">
+                <img src="images/useless-box.png" alt="Stepper-Motor Useless Box project image" loading="lazy" />
+                <video controls preload="metadata">
                   <source src="images/useless-box-demo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <label class="upload-label" for="upload-stepper">Upload photos/videos for preview</label>
-              <input class="media-upload" id="upload-stepper" type="file" accept="image/*,video/*" multiple />
             </div>
           </div>
         </article>
@@ -365,12 +314,10 @@
               <p><strong>Engineering takeaway:</strong> Energy hardware is a tradeoff problem: efficiency, safety, size, cost, and robustness all matter at once.</p>
             </div>
             <div class="project-media" data-project="solar">
-              <p class="media-note">Showcase media for this project.</p>
               <div class="media-gallery">
-                <img src="images/solar-charger.heic" alt="Solar Phone Charger project image" loading="lazy" onerror="this.style.display='none';" />
+                <img src="images/solar-charger.heic" alt="Solar Phone Charger project image" loading="lazy" />
+                <p class="media-file-link"><a href="images/solar-charger.heic" target="_blank" rel="noopener noreferrer">Open solar charger image</a></p>
               </div>
-              <label class="upload-label" for="upload-solar">Upload photos/videos for preview</label>
-              <input class="media-upload" id="upload-solar" type="file" accept="image/*,video/*" multiple />
             </div>
           </div>
         </article>
@@ -398,16 +345,15 @@
               <p><strong>Engineering takeaway:</strong> Effective device prototyping combines mechanical design, controls, and reliable operator interaction.</p>
             </div>
             <div class="project-media" data-project="mixer">
-              <p class="media-note">Showcase media for this project.</p>
               <div class="media-gallery">
-                <img src="images/mixer-wiring.heic" alt="Mixing/Cleaning Fixture wiring photo" loading="lazy" onerror="this.style.display='none';" />
-                <video controls preload="metadata" onerror="this.style.display='none';">
+                <img src="images/mixer-wiring.heic" alt="Mixing/Cleaning Fixture wiring photo" loading="lazy" />
+                <p class="media-file-link"><a href="images/mixer-wiring.heic" target="_blank" rel="noopener noreferrer">Open mixer wiring image</a></p>
+                <video controls preload="metadata">
                   <source src="images/mixer-demo.mov" type="video/quicktime" />
                   Your browser does not support the video tag.
                 </video>
+                <p class="media-file-link"><a href="images/mixer-demo.mov" target="_blank" rel="noopener noreferrer">Open mixer demo video</a></p>
               </div>
-              <label class="upload-label" for="upload-mixer">Upload photos/videos for preview</label>
-              <input class="media-upload" id="upload-mixer" type="file" accept="image/*,video/*" multiple />
             </div>
           </div>
         </article>
@@ -436,12 +382,10 @@
               <p><strong>Engineering takeaway:</strong> Small interactive systems are a great test of disciplined firmware structure and debugging.</p>
             </div>
             <div class="project-media" data-project="breakout">
-              <p class="media-note">Showcase media for this project.</p>
               <div class="media-gallery">
-                <img src="images/breakout.heic" alt="LED 8x8 Atari Breakout Display project image" loading="lazy" onerror="this.style.display='none';" />
+                <img src="images/breakout.heic" alt="LED 8x8 Atari Breakout Display project image" loading="lazy" />
+                <p class="media-file-link"><a href="images/breakout.heic" target="_blank" rel="noopener noreferrer">Open breakout image</a></p>
               </div>
-              <label class="upload-label" for="upload-breakout">Upload photos/videos for preview</label>
-              <input class="media-upload" id="upload-breakout" type="file" accept="image/*,video/*" multiple />
             </div>
           </div>
         </article>
@@ -453,18 +397,18 @@
       <div class="card">
         <h2>About</h2>
         <p>
-          I’m an EE student who likes projects that move from idea to physical system: designing,
+          I'm an EE student who likes projects that move from idea to physical system: designing,
           prototyping, testing, debugging, and improving based on real measurements.
         </p>
         <p>
-          I’m especially interested in embedded hardware, practical electronics, power/energy applications,
+          I'm especially interested in embedded hardware, practical electronics, power/energy applications,
           and engineering roles where I can learn quickly by building.
         </p>
       </div>
       <div class="card">
         <h2>Skills</h2>
         <p><strong>Technical:</strong> C++, Python, Arduino, circuit analysis, prototyping, testing, debugging, embedded systems fundamentals</p>
-        <p><strong>Tools:</strong> Add your actual tools here — KiCad, LTspice, SolidWorks, oscilloscope, logic analyzer, etc.</p>
+        <p><strong>Tools:</strong> Add your actual tools here - KiCad, LTspice, SolidWorks, oscilloscope, logic analyzer, etc.</p>
         <p><strong>Coursework:</strong> Add the most relevant EE / systems / embedded classes here.</p>
       </div>
     </section>
@@ -486,46 +430,5 @@
       </div>
     </section>
   </main>
-
-  <footer class="wrap">
-    Built for internship applications, including hardware and energy-focused roles like SPAN.
-  </footer>
-  <script>
-    document.querySelectorAll(".project-media").forEach(function (block) {
-      var input = block.querySelector(".media-upload");
-      var gallery = block.querySelector(".media-gallery");
-      if (!input || !gallery) return;
-
-      input.addEventListener("change", function () {
-        Array.from(input.files || []).forEach(function (file) {
-          var url = URL.createObjectURL(file);
-          var el;
-
-          if (file.type.startsWith("image/")) {
-            el = document.createElement("img");
-            el.src = url;
-            el.alt = file.name;
-            el.loading = "lazy";
-          } else if (file.type.startsWith("video/")) {
-            el = document.createElement("video");
-            el.src = url;
-            el.controls = true;
-            el.preload = "metadata";
-          } else {
-            return;
-          }
-
-          gallery.appendChild(el);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
