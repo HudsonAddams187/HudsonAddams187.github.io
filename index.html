@@ -58,6 +58,55 @@
       z-index: -2;
     }
 
+    .ambient-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .ambient {
+      position: absolute;
+      border-radius: 28px;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      opacity: 0.08;
+      filter: saturate(0.9) blur(1px);
+    }
+
+    .ambient-pcb {
+      top: 84px;
+      right: -8vw;
+      width: min(42vw, 520px);
+      transform: rotate(-8deg);
+    }
+
+    .ambient-scope {
+      top: 38%;
+      left: -10vw;
+      width: min(34vw, 440px);
+      transform: rotate(-10deg);
+      opacity: 0.06;
+    }
+
+    .ambient-breadboard {
+      bottom: 8%;
+      right: 6vw;
+      width: min(28vw, 360px);
+      transform: rotate(12deg);
+      opacity: 0.05;
+    }
+
+    .ambient-wave {
+      bottom: 16%;
+      left: 28vw;
+      width: min(30vw, 380px);
+      opacity: 0.12;
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
     img,
     video {
       display: block;
@@ -172,7 +221,7 @@
     }
 
     .hero-grid {
-      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-columns: 1.18fr 0.82fr;
       align-items: stretch;
     }
 
@@ -323,13 +372,15 @@
       display: grid;
       gap: 16px;
       align-content: start;
+      justify-items: end;
     }
 
     .portrait-card {
       position: relative;
       overflow: hidden;
       border-radius: 24px;
-      min-height: 320px;
+      width: min(100%, 360px);
+      min-height: 260px;
       border: 1px solid rgba(98, 239, 255, 0.14);
       background: linear-gradient(180deg, rgba(4, 11, 16, 0.2), rgba(4, 11, 16, 0.5));
     }
@@ -338,7 +389,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 24%;
+      object-position: center 20%;
       filter: saturate(1.02) contrast(1.03);
     }
 
@@ -348,12 +399,6 @@
       inset: 0;
       background:
         linear-gradient(180deg, transparent 45%, rgba(4, 11, 16, 0.56) 100%);
-    }
-
-    .hero-tech-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 16px;
     }
 
     .tech-tile {
@@ -415,15 +460,24 @@
       margin-top: 9px;
     }
 
-    .about-visuals {
+    .detail-card {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-      min-height: 100%;
+      align-content: center;
+      gap: 18px;
     }
 
-    .about-visuals .tech-tile:first-child {
-      min-height: 100%;
+    .detail-card h3 {
+      font-size: 1.35rem;
+    }
+
+    .detail-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .detail-card li + li {
+      margin-top: 9px;
     }
 
     .projects {
@@ -588,16 +642,12 @@
         padding: 22px;
       }
 
-      .hero-tech-grid,
-      .about-visuals {
-        grid-template-columns: 1fr;
-      }
-
       .hero h1 {
         font-size: clamp(2.4rem, 13vw, 4rem);
       }
 
       .portrait-card {
+        width: 100%;
         min-height: 280px;
       }
     }
@@ -622,6 +672,13 @@
     </div>
   </nav>
 
+  <div class="ambient-layer" aria-hidden="true">
+    <img class="ambient ambient-pcb" src="images/stock-pcb.jpg" alt="" />
+    <img class="ambient ambient-scope" src="images/stock-oscilloscope.jpg" alt="" />
+    <img class="ambient ambient-breadboard" src="images/stock-breadboard.jpg" alt="" />
+    <img class="ambient ambient-wave" src="images/waveform.svg" alt="" />
+  </div>
+
   <header id="top" class="hero">
     <div class="wrap hero-grid">
       <section class="panel hero-copy">
@@ -639,26 +696,12 @@
         <div class="actions">
           <a class="btn primary" href="#projects">View Projects</a>
           <a class="btn secondary" href="Hudson-Addams-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-          <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </section>
 
       <aside class="panel hero-side" aria-label="Portrait and engineering imagery">
         <div class="portrait-card">
           <img src="images/hudson-portrait.jpg" alt="Portrait of Hudson Addams" loading="eager" />
-        </div>
-        <div class="hero-tech-grid">
-          <div class="tech-tile">
-            <img src="images/stock-pcb.jpg" alt="Printed circuit board detail" loading="lazy" />
-          </div>
-          <div class="tech-stack">
-            <div class="tech-tile">
-              <img src="images/stock-breadboard.jpg" alt="Breadboard photo" loading="lazy" />
-            </div>
-            <div class="tech-tile">
-              <img src="images/waveform.svg" alt="Oscilloscope waveform graphic" loading="lazy" />
-            </div>
-          </div>
         </div>
       </aside>
     </div>
@@ -689,20 +732,13 @@
           </ul>
         </article>
 
-        <aside class="panel about-card">
-          <div class="about-visuals">
-            <div class="tech-tile">
-              <img src="images/circuit-board.svg" alt="Circuit board illustration" loading="lazy" />
-            </div>
-            <div class="tech-stack">
-              <div class="tech-tile">
-                <img src="images/stock-oscilloscope.jpg" alt="Oscilloscope photo" loading="lazy" />
-              </div>
-              <div class="tech-tile">
-                <img src="images/mixer-wiring.jpg" alt="Wiring and electronics hardware detail" loading="lazy" />
-              </div>
-            </div>
-          </div>
+        <aside class="panel about-card detail-card">
+          <h3>What I Like Working On</h3>
+          <ul>
+            <li>Embedded systems that connect firmware with physical hardware behavior.</li>
+            <li>Projects that require measurement, iteration, and debugging at the bench.</li>
+            <li>Builds that combine controls, electronics, and practical mechanical integration.</li>
+          </ul>
         </aside>
       </div>
     </section>
@@ -860,14 +896,11 @@
         <h2>Contact</h2>
         <p>I am interested in embedded systems, hardware development, energy systems, and practical engineering build work.</p>
         <ul class="contact-list">
-          <li><strong>Email:</strong> <a href="mailto:youremail@stanford.edu">youremail@stanford.edu</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">Add your LinkedIn</a></li>
+          <li><strong>Email:</strong> <a href="mailto:hkaddams@stanford.edu">hkaddams@stanford.edu</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hudson-addams-9a8176345" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/hudson-addams-9a8176345</a></li>
         </ul>
       </article>
     </section>
   </main>
-
-  <footer class="wrap"></footer>
 </body>
 </html>
