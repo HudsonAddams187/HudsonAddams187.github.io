@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hudson | Electrical Engineering Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --panel-2: #182142;
+      --text: #eef2ff;
+      --muted: #b8c0e0;
+      --accent: #8fb3ff;
+      --line: rgba(255,255,255,0.12);
+      --max: 1024px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #0f1730 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(11,16,32,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 40px;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card, .card {
+      background: rgba(18,25,51,0.85);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 { margin: 0 0 12px; }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      margin-bottom: 18px;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 62ch;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--text);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #09111f;
+      border-color: transparent;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .projects {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project {
+      background: rgba(18,25,51,0.85);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 16px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(143,179,255,0.12);
+      border: 1px solid rgba(143,179,255,0.25);
+      color: #d6e2ff;
+      font-size: 0.88rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+    }
+
+    .project ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    .placeholder {
+      min-height: 220px;
+      border-radius: 16px;
+      border: 1px dashed rgba(255,255,255,0.22);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      text-align: center;
+      padding: 16px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    footer {
+      padding: 36px 0 52px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .project-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <strong>Hudson | EE Portfolio</strong>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="wrap hero">
+    <div class="hero-card">
+      <div class="eyebrow">Electrical Engineering • Stanford</div>
+      <h1>Building embedded, hardware, and energy-focused systems.</h1>
+      <p class="sub">
+        I’m Hudson, an Electrical Engineering student at Stanford interested in embedded systems,
+        hardware design, power/energy systems, and practical engineering build-debug-test work.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="#resume">Resume</a>
+        <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>What I want recruiters to see</h3>
+      <div class="mini-grid">
+        <div class="mini"><strong>Hands-on building</strong><br>Prototype, test, iterate, and ship working systems.</div>
+        <div class="mini"><strong>Technical depth</strong><br>Schematics, code, debugging, measurement, and design tradeoffs.</div>
+        <div class="mini"><strong>Range</strong><br>Embedded systems, circuits, controls, audio/DSP, and robotics-adjacent work.</div>
+        <div class="mini"><strong>Communication</strong><br>Clear documentation, visuals, and concise engineering explanations.</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="projects">
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>Stepper-Motor Useless Box</h3>
+              <p>A custom electromechanical build combining embedded control, motor actuation, and enclosure design.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Embedded</span>
+              <span class="tag">Motor Control</span>
+              <span class="tag">Hardware Prototyping</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div>
+              <strong>What I worked on</strong>
+              <ul>
+                <li>Integrated a stepper motor and controller logic for repeatable mechanical actuation.</li>
+                <li>Developed firmware to coordinate motion and switch behavior.</li>
+                <li>Iterated on physical design and integration of electronics with enclosure components.</li>
+                <li>Debugged behavior across mechanical, electrical, and software layers.</li>
+              </ul>
+              <p><strong>Engineering takeaway:</strong> Good embedded hardware depends on tight iteration between mechanism, control logic, and power behavior.</p>
+            </div>
+            <div class="placeholder">Add project photo, wiring diagram, or short demo GIF here.</div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>Solar Phone Charger</h3>
+              <p>A portable energy system project focused on efficient charging, power conversion, and real-world electrical constraints.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Power Electronics</span>
+              <span class="tag">Energy Systems</span>
+              <span class="tag">Testing</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div>
+              <strong>What I worked on</strong>
+              <ul>
+                <li>Designed and analyzed the charging path from solar input to device output.</li>
+                <li>Considered efficiency, conversion losses, and system constraints.</li>
+                <li>Evaluated component-level tradeoffs relevant to portable power delivery.</li>
+                <li>Used measurements and iteration to improve system performance.</li>
+              </ul>
+              <p><strong>Engineering takeaway:</strong> Energy hardware is a tradeoff problem: efficiency, safety, size, cost, and robustness all matter at once.</p>
+            </div>
+            <div class="placeholder">Add schematic, test data, converter block diagram, or prototype image here.</div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>LED 8×8 Atari Breakout Display</h3>
+              <p>A game-inspired display project using an LED matrix, embedded control, and timing-sensitive logic.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Microcontrollers</span>
+              <span class="tag">Display Control</span>
+              <span class="tag">Interactive Systems</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div>
+              <strong>What I worked on</strong>
+              <ul>
+                <li>Built an interactive LED matrix system with game-state logic.</li>
+                <li>Handled timing, state updates, and hardware-software coordination.</li>
+                <li>Focused on making the system reliable and visually responsive.</li>
+                <li>Combined technical execution with a polished demo experience.</li>
+              </ul>
+              <p><strong>Engineering takeaway:</strong> Small interactive systems are a great test of disciplined firmware structure and debugging.</p>
+            </div>
+            <div class="placeholder">Add matrix photo, code screenshot, or state-machine diagram here.</div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>Karplus-Strong Tone Matrix / String Simulation</h3>
+              <p>A software-based audio and signal-processing project modeling plucked-string behavior in C++.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">C++</span>
+              <span class="tag">DSP</span>
+              <span class="tag">Simulation</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div>
+              <strong>What I worked on</strong>
+              <ul>
+                <li>Implemented a plucked-string simulation using the Karplus-Strong algorithm.</li>
+                <li>Connected algorithmic behavior to interactive audio output.</li>
+                <li>Worked with timing, memory management, and system-level debugging.</li>
+                <li>Explained the model clearly through both code and engineering reasoning.</li>
+              </ul>
+              <p><strong>Engineering takeaway:</strong> Even software-heavy work can showcase engineering rigor when it includes system thinking and clean implementation.</p>
+            </div>
+            <div class="placeholder">Add waveform image, UI screenshot, or short explanation graphic here.</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="about" class="two-col">
+      <div class="card">
+        <h2>About</h2>
+        <p>
+          I’m an EE student who likes projects that move from idea to physical system: designing,
+          prototyping, testing, debugging, and improving based on real measurements.
+        </p>
+        <p>
+          I’m especially interested in embedded hardware, practical electronics, power/energy applications,
+          and engineering roles where I can learn quickly by building.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Skills</h2>
+        <p><strong>Technical:</strong> C++, Python, Arduino, circuit analysis, prototyping, testing, debugging, embedded systems fundamentals</p>
+        <p><strong>Tools:</strong> Add your actual tools here — KiCad, LTspice, SolidWorks, oscilloscope, logic analyzer, etc.</p>
+        <p><strong>Coursework:</strong> Add the most relevant EE / systems / embedded classes here.</p>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="card">
+        <h2>Resume</h2>
+        <p>Upload your PDF to this folder and replace the link below:</p>
+        <p><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Open Resume PDF</a></p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:youremail@stanford.edu">youremail@stanford.edu</a></p>
+        <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">Add your LinkedIn</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Built for internship applications, including hardware and energy-focused roles like SPAN.
+  </footer>
+</body>
+</html>
