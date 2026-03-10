@@ -1,0 +1,58 @@
+<svg width="720" height="480" viewBox="0 0 720 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="480" rx="28" fill="#071019"/>
+  <rect x="24" y="24" width="672" height="432" rx="22" fill="url(#panel)" stroke="#1B5960" stroke-width="2"/>
+  <g opacity="0.9" stroke="#5DF2FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M94 105H248V152H358"/>
+    <path d="M94 380H214V332H310V278H396"/>
+    <path d="M626 108H472V164H360"/>
+    <path d="M622 374H510V318H442"/>
+    <path d="M184 242H272"/>
+    <path d="M452 242H540"/>
+    <path d="M360 118V188"/>
+    <path d="M360 294V364"/>
+  </g>
+  <g fill="#5DF2FF">
+    <circle cx="94" cy="105" r="8"/>
+    <circle cx="94" cy="380" r="8"/>
+    <circle cx="626" cy="108" r="8"/>
+    <circle cx="622" cy="374" r="8"/>
+    <circle cx="184" cy="242" r="8"/>
+    <circle cx="540" cy="242" r="8"/>
+  </g>
+  <rect x="272" y="148" width="176" height="188" rx="18" fill="#0A1720" stroke="#A6FF5F" stroke-width="3"/>
+  <rect x="304" y="184" width="112" height="116" rx="12" fill="#112937" stroke="#5DF2FF" stroke-width="2"/>
+  <g stroke="#A6FF5F" stroke-width="3" stroke-linecap="round">
+    <path d="M320 166V128"/>
+    <path d="M344 166V128"/>
+    <path d="M368 166V128"/>
+    <path d="M392 166V128"/>
+    <path d="M320 354V316"/>
+    <path d="M344 354V316"/>
+    <path d="M368 354V316"/>
+    <path d="M392 354V316"/>
+    <path d="M290 204H252"/>
+    <path d="M290 230H252"/>
+    <path d="M290 256H252"/>
+    <path d="M290 282H252"/>
+    <path d="M468 204H430"/>
+    <path d="M468 230H430"/>
+    <path d="M468 256H430"/>
+    <path d="M468 282H430"/>
+  </g>
+  <g opacity="0.7" stroke="#FF9B54" stroke-width="2">
+    <path d="M114 166H170V222H230"/>
+    <path d="M606 300H558V222H500"/>
+    <path d="M170 310H214V274H248"/>
+  </g>
+  <g fill="#FF9B54">
+    <circle cx="114" cy="166" r="5"/>
+    <circle cx="606" cy="300" r="5"/>
+    <circle cx="170" cy="310" r="5"/>
+  </g>
+  <defs>
+    <linearGradient id="panel" x1="88" y1="54" x2="650" y2="434" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1720"/>
+      <stop offset="1" stop-color="#0D2531"/>
+    </linearGradient>
+  </defs>
+</svg>

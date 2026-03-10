@@ -1,0 +1,58 @@
+<svg width="720" height="480" viewBox="0 0 720 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="480" rx="28" fill="#0A1420"/>
+  <rect x="24" y="24" width="672" height="432" rx="22" fill="#0E1D29" stroke="#2B6F78" stroke-width="2"/>
+  <g opacity="0.26" stroke="#5DF2FF">
+    <path d="M60 84H660"/>
+    <path d="M60 144H660"/>
+    <path d="M60 204H660"/>
+    <path d="M60 264H660"/>
+    <path d="M60 324H660"/>
+    <path d="M60 384H660"/>
+    <path d="M120 60V420"/>
+    <path d="M240 60V420"/>
+    <path d="M360 60V420"/>
+    <path d="M480 60V420"/>
+    <path d="M600 60V420"/>
+  </g>
+  <g stroke="#E8F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M108 186H190"/>
+    <path d="M190 186L206 166L222 206L238 166L254 206L270 166L286 186H352"/>
+    <path d="M352 186V132"/>
+    <path d="M352 186V240"/>
+    <path d="M352 132H416"/>
+    <path d="M352 240H416"/>
+    <path d="M416 132V240"/>
+    <path d="M416 156L488 186L416 216V156Z"/>
+    <path d="M488 186H564"/>
+    <path d="M564 186V120"/>
+    <path d="M564 186V252"/>
+    <path d="M564 120H618"/>
+    <path d="M564 252H618"/>
+    <path d="M618 120V252"/>
+  </g>
+  <g stroke="#A6FF5F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M108 310H168"/>
+    <path d="M168 310V278"/>
+    <path d="M168 310V342"/>
+    <path d="M168 278H222"/>
+    <path d="M168 342H222"/>
+    <path d="M222 278V342"/>
+    <path d="M222 310H284"/>
+    <path d="M284 310L300 292L316 328L332 292L348 328L364 292L380 310H436"/>
+    <path d="M436 310H496"/>
+    <path d="M496 310V260"/>
+    <path d="M496 310V360"/>
+    <path d="M496 260H552"/>
+    <path d="M496 360H552"/>
+  </g>
+  <g fill="#FF9B54">
+    <circle cx="108" cy="186" r="6"/>
+    <circle cx="108" cy="310" r="6"/>
+    <circle cx="564" cy="186" r="6"/>
+    <circle cx="496" cy="310" r="6"/>
+  </g>
+  <g fill="#5DF2FF" font-family="'IBM Plex Mono', monospace" font-size="22">
+    <text x="90" y="94">SIGNAL PATH</text>
+    <text x="92" y="402">POWER + CONTROL</text>
+  </g>
+</svg>
