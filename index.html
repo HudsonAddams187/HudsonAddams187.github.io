@@ -8,17 +8,17 @@
     @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap");
 
     :root {
-      --bg: #061017;
-      --bg-deep: #03090d;
-      --panel: rgba(10, 25, 34, 0.9);
-      --panel-strong: rgba(12, 30, 41, 0.96);
-      --text: #edf9ff;
-      --muted: #93b8c6;
-      --cyan: #62efff;
-      --lime: #b8ff66;
-      --copper: #ff9750;
-      --line: rgba(98, 239, 255, 0.16);
-      --shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+      --bg: #0d1c25;
+      --bg-deep: #071118;
+      --panel: rgba(18, 42, 56, 0.9);
+      --panel-strong: rgba(21, 52, 68, 0.96);
+      --text: #f4fcff;
+      --muted: #a7c8d4;
+      --cyan: #73f4ff;
+      --lime: #caff7d;
+      --copper: #ffaf73;
+      --line: rgba(115, 244, 255, 0.18);
+      --shadow: 0 24px 54px rgba(0, 0, 0, 0.26);
       --max: 1180px;
       --radius: 26px;
     }
@@ -36,9 +36,9 @@
       font-family: "Space Grotesk", "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(98, 239, 255, 0.12), transparent 28%),
-        radial-gradient(circle at 80% 10%, rgba(255, 151, 80, 0.12), transparent 24%),
-        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 36%, #0b1820 100%);
+        radial-gradient(circle at top left, rgba(115, 244, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(255, 175, 115, 0.16), transparent 24%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 36%, #132732 100%);
       line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
@@ -71,7 +71,7 @@
       border-radius: 28px;
       object-fit: cover;
       mix-blend-mode: screen;
-      opacity: 0.08;
+      opacity: 0.06;
       filter: saturate(0.9) blur(1px);
     }
 
@@ -102,7 +102,7 @@
       bottom: 16%;
       left: 28vw;
       width: min(30vw, 380px);
-      opacity: 0.12;
+      opacity: 0.1;
       filter: none;
       mix-blend-mode: normal;
     }
@@ -127,7 +127,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(4, 10, 14, 0.8);
+      background: rgba(10, 21, 28, 0.8);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(98, 239, 255, 0.09);
     }
@@ -141,22 +141,8 @@
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      display: block;
       min-width: 0;
-    }
-
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--lime), var(--cyan));
-      color: #031017;
-      box-shadow: 0 14px 26px rgba(98, 239, 255, 0.22);
-      font: 600 0.82rem/1 "IBM Plex Mono", monospace;
     }
 
     .brand-copy,
@@ -221,7 +207,7 @@
     }
 
     .hero-grid {
-      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-columns: 1.22fr 0.78fr;
       align-items: stretch;
     }
 
@@ -231,7 +217,7 @@
       border-radius: var(--radius);
       border: 1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(18, 42, 54, 0.82), rgba(10, 25, 34, 0.97)),
+        linear-gradient(180deg, rgba(30, 66, 84, 0.8), rgba(18, 42, 56, 0.96)),
         var(--panel);
       box-shadow: var(--shadow);
     }
@@ -241,8 +227,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(125deg, rgba(98, 239, 255, 0.1), transparent 34%),
-        radial-gradient(circle at top right, rgba(255, 151, 80, 0.11), transparent 30%);
+        linear-gradient(125deg, rgba(115, 244, 255, 0.11), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 175, 115, 0.12), transparent 30%);
       pointer-events: none;
     }
 
@@ -302,7 +288,7 @@
     }
 
     .signal-row {
-      margin-top: 22px;
+      margin-top: 20px;
     }
 
     .signal-row span,
@@ -313,8 +299,8 @@
       padding: 7px 12px;
       border-radius: 999px;
       font-size: 0.73rem;
-      background: rgba(98, 239, 255, 0.08);
-      border: 1px solid rgba(98, 239, 255, 0.14);
+      background: rgba(115, 244, 255, 0.1);
+      border: 1px solid rgba(115, 244, 255, 0.16);
       color: #c6fbff;
     }
 
@@ -329,14 +315,8 @@
 
     .signal-row span:nth-child(2) {
       color: #ecffca;
-      background: rgba(184, 255, 102, 0.08);
-      border-color: rgba(184, 255, 102, 0.16);
-    }
-
-    .signal-row span:nth-child(3) {
-      color: #ffd8bf;
-      background: rgba(255, 151, 80, 0.08);
-      border-color: rgba(255, 151, 80, 0.16);
+      background: rgba(202, 255, 125, 0.1);
+      border-color: rgba(202, 255, 125, 0.16);
     }
 
     .actions {
@@ -350,14 +330,14 @@
       min-height: 48px;
       padding: 12px 18px;
       border-radius: 14px;
-      border: 1px solid rgba(98, 239, 255, 0.16);
-      background: rgba(6, 16, 22, 0.65);
+      border: 1px solid rgba(115, 244, 255, 0.16);
+      background: rgba(13, 31, 40, 0.68);
       font-weight: 600;
       transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
     }
 
     .btn.primary {
-      color: #041218;
+      color: #082028;
       background: linear-gradient(135deg, var(--lime), var(--cyan));
       border-color: transparent;
     }
@@ -370,26 +350,37 @@
 
     .hero-side {
       display: grid;
-      gap: 16px;
-      align-content: start;
-      justify-items: end;
+      align-content: center;
+      justify-items: center;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .hero-side::before,
+    .hero-side::after {
+      display: none;
     }
 
     .portrait-card {
       position: relative;
       overflow: hidden;
-      border-radius: 24px;
+      border-radius: 28px;
       width: min(100%, 360px);
       min-height: 260px;
-      border: 1px solid rgba(98, 239, 255, 0.14);
-      background: linear-gradient(180deg, rgba(4, 11, 16, 0.2), rgba(4, 11, 16, 0.5));
+      border: 1px solid rgba(115, 244, 255, 0.18);
+      background:
+        linear-gradient(180deg, rgba(36, 83, 104, 0.22), rgba(9, 23, 31, 0.35)),
+        rgba(12, 32, 41, 0.78);
+      box-shadow: 0 24px 44px rgba(0, 0, 0, 0.22);
     }
 
     .portrait-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center 18%;
       filter: saturate(1.02) contrast(1.03);
     }
 
@@ -398,7 +389,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, transparent 45%, rgba(4, 11, 16, 0.56) 100%);
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(7, 17, 24, 0.3) 20%, rgba(7, 17, 24, 0.4) 100%);
     }
 
     .tech-tile {
@@ -438,7 +429,7 @@
     }
 
     .section-head p {
-      color: var(--muted);
+      color: #b1d1dc;
       max-width: 48ch;
     }
 
@@ -453,7 +444,7 @@
     .about-list {
       margin: 20px 0 0;
       padding-left: 18px;
-      color: var(--muted);
+      color: #b6d4de;
     }
 
     .about-list li + li {
@@ -473,7 +464,7 @@
     .detail-card ul {
       margin: 0;
       padding-left: 18px;
-      color: var(--muted);
+      color: #b2d0db;
     }
 
     .detail-card li + li {
@@ -526,18 +517,11 @@
       margin-top: 8px;
     }
 
-    .project-body p {
-      margin-top: 16px;
-      color: #ffd7bd;
-      border-left: 3px solid var(--copper);
-      padding-left: 12px;
-    }
-
     .project-media {
       overflow: hidden;
       border-radius: 22px;
-      border: 1px solid rgba(98, 239, 255, 0.1);
-      background: rgba(5, 14, 19, 0.72);
+      border: 1px solid rgba(115, 244, 255, 0.1);
+      background: rgba(10, 24, 31, 0.76);
       padding: 14px;
     }
 
@@ -551,7 +535,7 @@
       width: 100%;
       border-radius: 16px;
       border: 1px solid rgba(98, 239, 255, 0.14);
-      background: #041017;
+      background: #08161c;
       aspect-ratio: 16 / 10;
       object-fit: cover;
     }
@@ -567,7 +551,7 @@
     .resume-card p,
     .contact-card p,
     .contact-list {
-      color: var(--muted);
+      color: #b1d0db;
     }
 
     .contact-list {
@@ -657,7 +641,6 @@
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Hudson Addams Electrical Engineering Portfolio">
-        <div class="brand-mark">EE</div>
         <div class="brand-copy">
           <strong>Hudson Addams</strong>
           <span>Embedded | Hardware | Energy Systems</span>
@@ -691,7 +674,6 @@
         <div class="signal-row" aria-label="Engineering focus areas">
           <span>Embedded Control</span>
           <span>Power Systems</span>
-          <span>Hardware Prototyping</span>
         </div>
         <div class="actions">
           <a class="btn primary" href="#projects">View Projects</a>
@@ -699,7 +681,7 @@
         </div>
       </section>
 
-      <aside class="panel hero-side" aria-label="Portrait and engineering imagery">
+      <aside class="hero-side" aria-label="Portrait">
         <div class="portrait-card">
           <img src="images/hudson-portrait.jpg" alt="Portrait of Hudson Addams" loading="eager" />
         </div>
@@ -726,9 +708,8 @@
             I enjoy work that blends firmware, circuits, mechanical integration, and real bench testing.
           </p>
           <ul class="about-list">
-            <li><strong>Technical:</strong> C++, Python, Arduino, circuit analysis, prototyping, testing, debugging, embedded systems fundamentals</li>
-            <li><strong>Tools:</strong> Add your actual tools here - KiCad, LTspice, SolidWorks, oscilloscope, logic analyzer, and lab equipment</li>
-            <li><strong>Coursework:</strong> Add the most relevant EE, embedded, controls, and systems classes here</li>
+            <li><strong>Technical:</strong> C++, Python, Arduino, circuit analysis, prototyping, and embedded systems fundamentals</li>
+            <li><strong>Tools:</strong> KiCad, LTspice, SolidWorks, oscilloscopes, logic analyzers, and lab equipment</li>
           </ul>
         </article>
 
@@ -769,9 +750,7 @@
                 <li>Integrated a stepper motor and control logic for repeatable actuation.</li>
                 <li>Developed firmware to coordinate motion and switch behavior.</li>
                 <li>Iterated on the physical design and enclosure integration.</li>
-                <li>Debugged the system across mechanical, electrical, and software layers.</li>
               </ul>
-              <p>Reliable embedded hardware depends on tight iteration between mechanism, control logic, and power behavior.</p>
             </div>
             <div class="project-media">
               <div class="media-gallery">
@@ -803,10 +782,8 @@
               <ul>
                 <li>Designed and analyzed the charging path from solar input to device output.</li>
                 <li>Considered efficiency, conversion losses, and system constraints.</li>
-                <li>Evaluated component-level tradeoffs for portable power delivery.</li>
                 <li>Used measurements and iteration to improve system performance.</li>
               </ul>
-              <p>Energy hardware is a tradeoff problem where efficiency, safety, size, cost, and robustness all matter at once.</p>
             </div>
             <div class="project-media">
               <div class="media-gallery">
@@ -836,7 +813,6 @@
                 <li>Developed a control system with a speed dial, start/stop button, and stepper driver.</li>
                 <li>Modeled and 3D-printed custom motor and mixer mounts.</li>
               </ul>
-              <p>Effective device prototyping combines mechanical design, controls, and reliable operator interaction.</p>
             </div>
             <div class="project-media">
               <div class="media-gallery">
@@ -869,9 +845,7 @@
                 <li>Built an LED matrix system with game-state logic.</li>
                 <li>Handled timing, state updates, and hardware-software coordination.</li>
                 <li>Focused on reliability and visual responsiveness.</li>
-                <li>Used the demo as a test of disciplined firmware structure and debugging.</li>
               </ul>
-              <p>Interactive systems are a strong test of firmware design, timing discipline, and clean electrical integration.</p>
             </div>
             <div class="project-media">
               <div class="media-gallery">
