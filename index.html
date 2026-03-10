@@ -205,6 +205,47 @@
       text-align: center;
       padding: 16px;
     }
+    .project-media {
+      border: 1px dashed rgba(255,255,255,0.22);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      padding: 14px;
+    }
+
+    .media-note {
+      color: var(--muted);
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+    }
+
+    .media-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .media-gallery img,
+    .media-gallery video {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #0a0f1f;
+      max-height: 280px;
+      object-fit: cover;
+    }
+
+    .upload-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .media-upload {
+      width: 100%;
+      color: var(--muted);
+    }
 
     .two-col {
       display: grid;
@@ -259,6 +300,7 @@
   <main class="wrap">
     <section id="projects">
       <h2>Selected Projects</h2>
+      <p class="sub">Add files to <code>images/</code> and/or use each project uploader for quick previews.</p>
       <div class="projects">
 
         <article class="project">
@@ -284,7 +326,18 @@
               </ul>
               <p><strong>Engineering takeaway:</strong> Good embedded hardware depends on tight iteration between mechanism, control logic, and power behavior.</p>
             </div>
-            <div class="placeholder">Add project photo, wiring diagram, or short demo GIF here.</div>
+            <div class="project-media" data-project="stepper">
+              <p class="media-note">Showcase media for this project.</p>
+              <div class="media-gallery">
+                <img src="images/stepper-1.jpg" alt="Stepper-Motor Useless Box project image" loading="lazy" onerror="this.style.display='none';" />
+                <video controls preload="metadata" onerror="this.style.display='none';">
+                  <source src="images/stepper-demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <label class="upload-label" for="upload-stepper">Upload photos/videos for preview</label>
+              <input class="media-upload" id="upload-stepper" type="file" accept="image/*,video/*" multiple />
+            </div>
           </div>
         </article>
 
@@ -311,14 +364,25 @@
               </ul>
               <p><strong>Engineering takeaway:</strong> Energy hardware is a tradeoff problem: efficiency, safety, size, cost, and robustness all matter at once.</p>
             </div>
-            <div class="placeholder">Add schematic, test data, converter block diagram, or prototype image here.</div>
+            <div class="project-media" data-project="solar">
+              <p class="media-note">Showcase media for this project.</p>
+              <div class="media-gallery">
+                <img src="images/solar-1.jpg" alt="Solar Phone Charger project image" loading="lazy" onerror="this.style.display='none';" />
+                <video controls preload="metadata" onerror="this.style.display='none';">
+                  <source src="images/solar-demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <label class="upload-label" for="upload-solar">Upload photos/videos for preview</label>
+              <input class="media-upload" id="upload-solar" type="file" accept="image/*,video/*" multiple />
+            </div>
           </div>
         </article>
 
         <article class="project">
           <div class="project-top">
             <div>
-              <h3>LED 8×8 Atari Breakout Display</h3>
+              <h3>LED 8x8 Atari Breakout Display</h3>
               <p>A game-inspired display project using an LED matrix, embedded control, and timing-sensitive logic.</p>
             </div>
             <div class="tags">
@@ -338,34 +402,18 @@
               </ul>
               <p><strong>Engineering takeaway:</strong> Small interactive systems are a great test of disciplined firmware structure and debugging.</p>
             </div>
-            <div class="placeholder">Add matrix photo, code screenshot, or state-machine diagram here.</div>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-top">
-            <div>
-              <h3>Karplus-Strong Tone Matrix / String Simulation</h3>
-              <p>A software-based audio and signal-processing project modeling plucked-string behavior in C++.</p>
+            <div class="project-media" data-project="breakout">
+              <p class="media-note">Showcase media for this project.</p>
+              <div class="media-gallery">
+                <img src="images/breakout-1.jpg" alt="LED 8x8 Atari Breakout Display project image" loading="lazy" onerror="this.style.display='none';" />
+                <video controls preload="metadata" onerror="this.style.display='none';">
+                  <source src="images/breakout-demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <label class="upload-label" for="upload-breakout">Upload photos/videos for preview</label>
+              <input class="media-upload" id="upload-breakout" type="file" accept="image/*,video/*" multiple />
             </div>
-            <div class="tags">
-              <span class="tag">C++</span>
-              <span class="tag">DSP</span>
-              <span class="tag">Simulation</span>
-            </div>
-          </div>
-          <div class="project-grid">
-            <div>
-              <strong>What I worked on</strong>
-              <ul>
-                <li>Implemented a plucked-string simulation using the Karplus-Strong algorithm.</li>
-                <li>Connected algorithmic behavior to interactive audio output.</li>
-                <li>Worked with timing, memory management, and system-level debugging.</li>
-                <li>Explained the model clearly through both code and engineering reasoning.</li>
-              </ul>
-              <p><strong>Engineering takeaway:</strong> Even software-heavy work can showcase engineering rigor when it includes system thinking and clean implementation.</p>
-            </div>
-            <div class="placeholder">Add waveform image, UI screenshot, or short explanation graphic here.</div>
           </div>
         </article>
 
@@ -413,6 +461,38 @@
   <footer class="wrap">
     Built for internship applications, including hardware and energy-focused roles like SPAN.
   </footer>
+  <script>
+    document.querySelectorAll(".project-media").forEach(function (block) {
+      var input = block.querySelector(".media-upload");
+      var gallery = block.querySelector(".media-gallery");
+      if (!input || !gallery) return;
+
+      input.addEventListener("change", function () {
+        Array.from(input.files || []).forEach(function (file) {
+          var url = URL.createObjectURL(file);
+          var el;
+
+          if (file.type.startsWith("image/")) {
+            el = document.createElement("img");
+            el.src = url;
+            el.alt = file.name;
+            el.loading = "lazy";
+          } else if (file.type.startsWith("video/")) {
+            el = document.createElement("video");
+            el.src = url;
+            el.controls = true;
+            el.preload = "metadata";
+          } else {
+            return;
+          }
+
+          gallery.appendChild(el);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
+
+
 
