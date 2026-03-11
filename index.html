@@ -483,14 +483,25 @@
       font-size: 1.35rem;
     }
 
-    .detail-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #b2d0db;
+    .detail-block {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(115, 244, 255, 0.12);
+      background: rgba(10, 24, 31, 0.48);
     }
 
-    .detail-card li + li {
-      margin-top: 9px;
+    .detail-block h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .detail-block p {
+      color: #b2d0db;
+      font-size: 0.95rem;
+    }
+
+    .detail-block p + p {
+      margin-top: 8px;
     }
 
     .projects {
@@ -537,6 +548,35 @@
 
     .project-body li + li {
       margin-top: 8px;
+    }
+
+    .project-specs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .project-spec {
+      padding: 12px 12px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(115, 244, 255, 0.12);
+      background: rgba(10, 24, 31, 0.48);
+    }
+
+    .project-spec span {
+      display: block;
+      color: var(--muted);
+      font: 500 0.7rem/1.4 "IBM Plex Mono", monospace;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .project-spec strong {
+      display: block;
+      font-size: 0.96rem;
+      line-height: 1.35;
     }
 
     .project-media {
@@ -622,6 +662,10 @@
         grid-template-columns: 1fr;
       }
 
+      .project-specs {
+        grid-template-columns: 1fr;
+      }
+
       .section-head {
         flex-direction: column;
         align-items: start;
@@ -693,8 +737,8 @@
         <p class="eyebrow">Electrical Engineering | Stanford</p>
         <h1>Building embedded, hardware, and energy-focused systems.</h1>
         <p>
-          I am Hudson, an Electrical Engineering student interested in embedded systems, power electronics,
-          hardware design, and the build-test-debug process that turns a concept into a working device.
+          I am a Stanford student pursuing B.S. degrees in Electrical Engineering and Earth Systems, with a focus on
+          embedded systems, power electronics, and hardware that gets built, tested, and iterated in the lab.
         </p>
         <div class="signal-row" aria-label="Engineering focus areas">
           <span>Embedded Control</span>
@@ -719,32 +763,38 @@
       <div class="section-head">
         <h2>About</h2>
         <p>
-          I like projects that move from concept to physical system through prototyping, measurement,
-          debugging, and iteration.
+          I like engineering work that starts with a concept and ends with a physical system that has been built,
+          tested, and improved from real measurements.
         </p>
       </div>
       <div class="about-grid">
         <article class="panel about-card">
           <p>
-            My interests are centered on embedded hardware, motor control, interactive electronics,
-            and practical power and energy systems.
+            I am currently pursuing B.S. degrees in Electrical Engineering and Earth Systems at Stanford University,
+            with an expected graduation year of 2028 and a 3.795 GPA.
           </p>
           <p>
-            I enjoy work that blends firmware, circuits, mechanical integration, and real bench testing.
+            My background so far has centered on circuits, embedded programming, CAD-backed prototyping, and practical
+            device builds that combine electronics, controls, and fabrication.
           </p>
           <ul class="about-list">
-            <li><strong>Technical:</strong> C++, Python, Arduino, circuit analysis, prototyping, and embedded systems fundamentals</li>
-            <li><strong>Tools:</strong> KiCad, LTspice, SolidWorks, oscilloscopes, logic analyzers, and lab equipment</li>
+            <li><strong>Coursework:</strong> Linear Algebra, Differential Equations, Circuits, and Computer Programming</li>
+            <li><strong>Programming:</strong> Python, C++, and Julia</li>
+            <li><strong>Tools:</strong> KiCad, SolidWorks, AutoCAD, oscilloscopes, logic analyzers, and lab prototyping equipment</li>
           </ul>
         </article>
 
         <aside class="panel about-card detail-card">
-          <h3>What I Like Working On</h3>
-          <ul>
-            <li>Embedded systems that connect firmware with physical hardware behavior.</li>
-            <li>Projects that require measurement, iteration, and debugging at the bench.</li>
-            <li>Builds that combine controls, electronics, and practical mechanical integration.</li>
-          </ul>
+          <h3>Current Work</h3>
+          <div class="detail-block">
+            <h4>Stanford Robotics Club</h4>
+            <p>Planktoscope Team member building a plankton-detecting research buoy for offshore data collection.</p>
+            <p>Using KiCad to design PCBs for power regulation and input processing while selecting components and supporting circuit architecture.</p>
+          </div>
+          <div class="detail-block">
+            <h4>AuSt Group Internship</h4>
+            <p>Worked as a Research and Design Intern developing medical-device prototypes, tensile and torque testing setups, and new lab machinery.</p>
+          </div>
         </aside>
       </div>
     </section>
@@ -772,10 +822,24 @@
             <div class="project-body">
               <strong>What I worked on</strong>
               <ul>
-                <li>Integrated a stepper motor and control logic for repeatable actuation.</li>
-                <li>Developed firmware to coordinate motion and switch behavior.</li>
-                <li>Iterated on the physical design and enclosure integration.</li>
+                <li>Constructed an electromechanical box with a motorized arm that flips its own switch.</li>
+                <li>Designed circuit schematics integrating multiple switch types, control components, and the motor drive path.</li>
+                <li>Developed control logic that coordinated switch sensing, actuation, and reset behavior.</li>
               </ul>
+              <div class="project-specs">
+                <div class="project-spec">
+                  <span>Actuation</span>
+                  <strong>Motorized arm and switch-reset motion</strong>
+                </div>
+                <div class="project-spec">
+                  <span>Circuit Work</span>
+                  <strong>Multi-switch schematic and control path design</strong>
+                </div>
+                <div class="project-spec">
+                  <span>Focus</span>
+                  <strong>Electrical and mechanical integration</strong>
+                </div>
+              </div>
             </div>
             <div class="project-media">
               <div class="media-gallery">
@@ -805,10 +869,24 @@
             <div class="project-body">
               <strong>What I worked on</strong>
               <ul>
-                <li>Designed and analyzed the charging path from solar input to device output.</li>
-                <li>Considered efficiency, conversion losses, and system constraints.</li>
-                <li>Used measurements and iteration to improve system performance.</li>
+                <li>Built a USB-compatible solar charger integrating a solar cell, lithium battery, and voltage-regulating resistors.</li>
+                <li>Designed and tested the circuit schematic for efficient power transfer and safe charging behavior.</li>
+                <li>Worked through tradeoffs involving conversion losses, battery handling, and usable output power.</li>
               </ul>
+              <div class="project-specs">
+                <div class="project-spec">
+                  <span>Power Chain</span>
+                  <strong>Solar cell to battery to USB output</strong>
+                </div>
+                <div class="project-spec">
+                  <span>Design Work</span>
+                  <strong>Schematic design and circuit testing</strong>
+                </div>
+                <div class="project-spec">
+                  <span>Priority</span>
+                  <strong>Efficient transfer and safe charging</strong>
+                </div>
+              </div>
             </div>
             <div class="project-media">
               <div class="media-gallery">
@@ -885,7 +963,7 @@
     <section class="lower-grid">
       <article id="resume" class="panel resume-card">
         <h2>Resume</h2>
-        <p>View the latest uploaded resume for coursework, experience, and project details.</p>
+        <p>B.S. in Electrical Engineering and B.S. in Earth Systems, Stanford University, expected 2028. GPA: 3.795.</p>
         <div class="resume-actions">
           <a class="btn primary" href="Hudson-Addams-Resume.pdf" target="_blank" rel="noopener noreferrer">Open Resume PDF</a>
         </div>
