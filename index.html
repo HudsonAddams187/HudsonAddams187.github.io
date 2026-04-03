@@ -346,7 +346,6 @@
       line-height: 1.2;
     }
 
-    .signal-row,
     .tags,
     .actions {
       display: flex;
@@ -354,11 +353,6 @@
       gap: 10px;
     }
 
-    .signal-row {
-      margin-top: 22px;
-    }
-
-    .signal-row span,
     .tag {
       display: inline-flex;
       align-items: center;
@@ -381,20 +375,6 @@
     .tags .tag:nth-child(3) {
       color: #ffc0ad;
       border-color: rgba(255, 125, 87, 0.2);
-    }
-
-    .signal-row span::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: currentColor;
-      box-shadow: 0 0 12px currentColor;
-    }
-
-    .signal-row span:nth-child(2) {
-      color: var(--copper);
-      border-color: rgba(255, 190, 89, 0.18);
     }
 
     .actions {
@@ -826,10 +806,6 @@
       .panel:hover,
       .btn:hover {
         transform: translateY(-2px);
-      }
-
-      .signal-row span::before {
-        animation: signalPulse 1.8s ease-in-out infinite;
       }
 
       .ambient-pcb {
