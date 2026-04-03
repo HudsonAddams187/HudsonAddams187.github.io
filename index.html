@@ -271,8 +271,7 @@
     .about-card,
     .project-card,
     .resume-card,
-    .contact-card,
-    .hero-status {
+    .contact-card {
       padding: 28px;
       position: relative;
       z-index: 1;
@@ -499,39 +498,6 @@
       display: block;
       font-size: 0.96rem;
       line-height: 1.2;
-    }
-
-    .hero-status {
-      min-height: 0;
-    }
-
-    .status-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .status-list li {
-      display: grid;
-      gap: 4px;
-      padding: 14px 14px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(185, 255, 115, 0.12);
-      background: rgba(8, 12, 7, 0.5);
-    }
-
-    .status-list span {
-      color: var(--muted);
-      font: 500 0.7rem/1.4 "IBM Plex Mono", monospace;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-
-    .status-list strong {
-      font-size: 1rem;
-      line-height: 1.25;
     }
 
     .tech-tile {
@@ -917,8 +883,7 @@
       .about-card,
       .project-card,
       .resume-card,
-      .contact-card,
-      .hero-status {
+      .contact-card {
         padding: 22px;
       }
 
@@ -971,7 +936,7 @@
   <header id="top" class="hero">
     <div class="wrap hero-grid">
       <section class="panel hero-copy">
-        <p class="eyebrow">Electrical Engineering Portfolio // Retro Tech Lab</p>
+        <p class="eyebrow">Electrical Engineering Portfolio</p>
         <h1>Building embedded systems, lab hardware, and energy prototypes.</h1>
         <p>
           I am a Stanford student pursuing B.S. degrees in Electrical Engineering and Earth Systems, with a focus on
@@ -1001,7 +966,7 @@
         </div>
       </section>
 
-      <aside class="hero-side" aria-label="Portrait and status">
+      <aside class="hero-side" aria-label="Portrait">
         <div class="portrait-card screen-frame">
           <img src="images/hudson-portrait.jpg" alt="Portrait of Hudson Addams" loading="eager" />
           <div class="portrait-overlay">
@@ -1014,24 +979,6 @@
               <strong>Electrical Engineering</strong>
             </div>
           </div>
-        </div>
-
-        <div class="panel hero-status">
-          <p class="panel-label">Console Status</p>
-          <ul class="status-list">
-            <li>
-              <span>Current Build Mode</span>
-              <strong>Embedded control, prototyping, and power systems</strong>
-            </li>
-            <li>
-              <span>Active Team</span>
-              <strong>Stanford Robotics Club, Planktoscope Team</strong>
-            </li>
-            <li>
-              <span>Toolkit</span>
-              <strong>KiCad, SolidWorks, oscilloscopes, and lab fabrication tools</strong>
-            </li>
-          </ul>
         </div>
       </aside>
     </div>
